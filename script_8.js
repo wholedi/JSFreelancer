@@ -24,3 +24,16 @@ let userIn = {
 let user = userInfo;
 user.age = 45;
 console.log(user.age)
+
+function withThis(name) {
+    this.name = name
+    this.age = 30
+}
+function withoutThis(name) {
+    return {
+        name: name,
+        age: 30
+    }
+}
+console.log(new withThis("Taras"))
+console.log(withoutThis("Taras"))

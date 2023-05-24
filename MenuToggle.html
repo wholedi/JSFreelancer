@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    #button {
+        border: 1px solid #ddd;
+        height: 20px;
+    }
+
+    .menu {
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+        border: 1px solid #ddd;
+        display: none;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+</style>
+<button id="button">Button</button>
+<div class="menu">Menu</div>
+
+<script>
+    const button = document.getElementById('button')
+    const menu = document.querySelector('.menu')
+
+
+    button.addEventListener('mouseover', () => {
+        // if (menu.classList.contains('active')) {
+        //     menu.classList.remove('active')
+        // } else {
+           menu.classList.add('active')
+        // }
+
+        //or
+
+
+       // menu.classList.toggle('active')
+    })
+    button.addEventListener('dblclick', () =>{
+        menu.classList.remove('active');
+    })
+
+</script>
+</body>
+</html>
