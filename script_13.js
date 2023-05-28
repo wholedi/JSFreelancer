@@ -23,6 +23,7 @@ function setScrollTo() {
     const windowScrollTop = window.pageYOffset
 }
 
+
 //Управление прокруткой страницы
 /* Вызов elem.scrollIntoView(top) прокручивает страницу чтобы элемент оказался вверху или внизу.
 У него есть один аргумент:
