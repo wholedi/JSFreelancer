@@ -110,5 +110,38 @@ click/dblclick - комплексные события состоят с про�
 const blockForMouse = document.querySelector('.block-for-mouse');
 blockForMouse.addEventListener('mousemove', function (event){
     blockForMouse.innerHTML =
-    'clientX - '
+    'clientX - ${event.clientX} <br> clientY - ${event.clientY}';
+});
+
+//Наведение мыши: mouseover/out, mouseenter/leave
+//События mouseover(когда курсор над элементом)/mouseout(курсор уходит с элемента), relatedTarget
+const blockForMouseOne = document.querySelector('.block-for-mouse');
+blockForMouseOne.addEventListener('mouseover', function (event){
+    blockForMouseOne.innerHTML = 'Курсор над элементом'
+})
+blockForMouseOne.addEventListener('mouseout', function (event){
+    blockForMouseOne.innerHTML = 'Курсор уходит с элемента'
+})
+
+//mouseenter/leave
+/* Пара отличий:
+1. Переходы внутри элемента, на его потомки и с них, не считаются.
+2. События не всплывают
+ */
+const blockForMouseTwo = document.querySelector('.block-for-mouse');
+blockForMouseTwo.addEventListener('mouseenter', function (event){
+    console.log('Курсор над элементом')
+})
+blockForMouseTwo.addEventListener('mouseleave', function (event){
+    console.log('Курсор уходит с элемента')
+})
+
+//-------------------------------------------------События клавиатуры---------------------------------------------------
+//Основные события keydown - при нажатии клавиши, keyup - при отпускании
+//event.code/event.key
+document.addEventListener('keydown', function (event){
+    console.log('Нажата клавиша ${event.code} ($event.key})')
+})
+document.addEventListener('keyup', function (event){
+    console.log('Отжата клавиша ${event.code} ($event.key})')
 })
